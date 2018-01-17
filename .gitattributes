@@ -1,1 +1,2 @@
-*.C linguist-language=html
+*.C linguist-language=swift
+*.c++ linguist-language=swift
