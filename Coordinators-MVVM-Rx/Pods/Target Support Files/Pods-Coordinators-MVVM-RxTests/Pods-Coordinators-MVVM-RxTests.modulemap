@@ -1,0 +1,6 @@
+framework module Pods_Coordinators_MVVM_RxTests {
+  umbrella header "Pods-Coordinators-MVVM-RxTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
