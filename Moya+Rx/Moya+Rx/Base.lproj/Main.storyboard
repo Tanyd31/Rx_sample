@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="o9B-mP-c4c">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="gcn-t4-bTn">
+            <objects>
+                <navigationController id="o9B-mP-c4c" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7tr-ks-0yJ">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Oxb-oY-Ovd" kind="relationship" relationship="rootViewController" id="jrr-ue-xNY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qMN-is-YFx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1183" y="207"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="AVO-7r-Nsf">
+            <objects>
+                <viewController id="Oxb-oY-Ovd" customClass="ViewController" customModule="Moya_Rx" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="koT-ce-tBh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Vu-aY-ZFu">
+                                <rect key="frame" x="100" y="318.5" width="175" height="30"/>
+                                <color key="backgroundColor" red="0.92941176469999998" green="0.33333333329999998" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Search"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="输入城市" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UpW-nW-P5j">
+                                <rect key="frame" x="100" y="214" width="175" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="7lT-tz-496"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="0.98431372549999996" green="0.80784313730000001" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="1Vu-aY-ZFu" firstAttribute="leading" secondItem="sgf-Mq-Qxx" secondAttribute="leading" constant="100" id="GwA-i5-dOV"/>
+                            <constraint firstItem="UpW-nW-P5j" firstAttribute="leading" secondItem="sgf-Mq-Qxx" secondAttribute="leading" constant="100" id="J0E-aa-D0g"/>
+                            <constraint firstItem="UpW-nW-P5j" firstAttribute="centerX" secondItem="koT-ce-tBh" secondAttribute="centerX" id="QJA-sb-AYf"/>
+                            <constraint firstItem="1Vu-aY-ZFu" firstAttribute="centerY" secondItem="koT-ce-tBh" secondAttribute="centerY" id="Qve-Os-Hob"/>
+                            <constraint firstItem="sgf-Mq-Qxx" firstAttribute="trailing" secondItem="1Vu-aY-ZFu" secondAttribute="trailing" constant="100" id="XHC-F1-sdh"/>
+                            <constraint firstItem="sgf-Mq-Qxx" firstAttribute="trailing" secondItem="UpW-nW-P5j" secondAttribute="trailing" constant="100" id="XM2-HH-ugw"/>
+                            <constraint firstItem="1Vu-aY-ZFu" firstAttribute="centerX" secondItem="koT-ce-tBh" secondAttribute="centerX" id="gVB-9M-q3J"/>
+                            <constraint firstItem="UpW-nW-P5j" firstAttribute="top" secondItem="sgf-Mq-Qxx" secondAttribute="top" constant="150" id="vIF-uG-b03"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="sgf-Mq-Qxx"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="QuY-n7-VOe"/>
+                    <connections>
+                        <outlet property="button1" destination="1Vu-aY-ZFu" id="KEy-4x-vSa"/>
+                        <outlet property="textView" destination="UpW-nW-P5j" id="lvy-um-9EM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jxw-Z5-xWb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-303" y="206"/>
+        </scene>
+    </scenes>
+</document>
