@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import RxOptional
-
+import SVProgressHUD
 // 有问题！
 
 class ViewController: UIViewController {
@@ -20,12 +20,16 @@ class ViewController: UIViewController {
     
     private let disposeBag: DisposeBag = DisposeBag()
     
+    
     enum CustomError: Error {
         case myCustom
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+       
+        
 //        retry2()
         textView.rx.text.orEmpty
             .map { $0.count > 0 }
@@ -206,4 +210,33 @@ extension ObservableType {
     }
     
 }
+
+extension SVProgressHUD {
+    static var rx_mbprogresshud_animating: AnyObserver<Bool> {
+        
+        return AnyObserver { event in
+            
+            MainScheduler.ensureExecutingOnScheduler()
+            
+            switch (event) {
+            case .next(let value):
+                if value {
+                    SVProgressHUD.show()
+//                    let loadingNotification = MBProgressHUD.showAdded(to: (UIApplication.shared.keyWindow?.subviews.last)!, animated: true)
+//                    loadingNotification.mode = self.mode
+//                    loadingNotification.label.text = self.label.text
+                } else {
+                    SVProgressHUD.dismiss()
+//                    MBProgressHUD.hide(for: (UIApplication.shared.keyWindow?.subviews.last)!, animated: true)
+                }
+            case .error(let error):
+                let error = "Binding error to UI: \(error)"
+                print(error)
+            case .completed:
+                break
+            }
+        }
+    }
+}
+
 

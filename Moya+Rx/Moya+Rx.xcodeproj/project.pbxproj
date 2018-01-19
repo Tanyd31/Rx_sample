@@ -10,6 +10,7 @@
 		05D673E1860DFB66100EA4F9 /* Pods_Moya_Rx.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FC418973F4001C9124B2DE8 /* Pods_Moya_Rx.framework */; };
 		27ABF2EB201097AC006B943E /* PM25.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ABF2EA201097AC006B943E /* PM25.swift */; };
 		27ABF2ED2010981E006B943E /* Response+ObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ABF2EC2010981E006B943E /* Response+ObjectMapper.swift */; };
+		27ABF4662011DEBE000C3211 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ABF4652011DEBE000C3211 /* ActivityIndicator.swift */; };
 		27D35E8320106216003DCCB6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D35E8220106216003DCCB6 /* AppDelegate.swift */; };
 		27D35E8520106216003DCCB6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D35E8420106216003DCCB6 /* ViewController.swift */; };
 		27D35E8820106216003DCCB6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27D35E8620106216003DCCB6 /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 		0EEB477F77BF0B3144B5524F /* Pods-Moya+Rx.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moya+Rx.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Moya+Rx/Pods-Moya+Rx.debug.xcconfig"; sourceTree = "<group>"; };
 		27ABF2EA201097AC006B943E /* PM25.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PM25.swift; sourceTree = "<group>"; };
 		27ABF2EC2010981E006B943E /* Response+ObjectMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Response+ObjectMapper.swift"; sourceTree = "<group>"; };
+		27ABF4652011DEBE000C3211 /* ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		27D35E7F20106216003DCCB6 /* Moya+Rx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Moya+Rx.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		27D35E8220106216003DCCB6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27D35E8420106216003DCCB6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 		27D35E8120106216003DCCB6 /* Moya+Rx */ = {
 			isa = PBXGroup;
 			children = (
+				27ABF4652011DEBE000C3211 /* ActivityIndicator.swift */,
 				27D35E8220106216003DCCB6 /* AppDelegate.swift */,
 				27D35E8420106216003DCCB6 /* ViewController.swift */,
 				27ABF2EA201097AC006B943E /* PM25.swift */,
@@ -249,6 +252,7 @@
 				27D35E952010625B003DCCB6 /* APIManager.swift in Sources */,
 				27ABF2ED2010981E006B943E /* Response+ObjectMapper.swift in Sources */,
 				27D35E8520106216003DCCB6 /* ViewController.swift in Sources */,
+				27ABF4662011DEBE000C3211 /* ActivityIndicator.swift in Sources */,
 				27D35E9720106267003DCCB6 /* Network.swift in Sources */,
 				27D35E8320106216003DCCB6 /* AppDelegate.swift in Sources */,
 			);

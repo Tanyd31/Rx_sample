@@ -13,6 +13,7 @@ import SVProgressHUD
 import Result
 import RxSwiftExt
 import RxOptional
+import RxCocoa
 
 struct NetWork {
     
@@ -20,6 +21,10 @@ struct NetWork {
                                                            plugins: [networkLoggerPlugin,
                                                                      networkActivityPlugin])
 
+    static let disposeBag: DisposeBag = DisposeBag()
+    
+    static let indicator = ActivityIndicator()
+    
     static func requestPM2_5(with city: String) -> Observable<[PM25]> {
         return request(with: .pm2_5(city), showHUD: true).map { (response) -> [PM25] in
             print("🐼🐼🐼🐼🐼🐼🐼🐼")
@@ -35,10 +40,15 @@ struct NetWork {
     static func request(with target: APIManager,
                         showHUD: Bool = true,
                         retryMaxCount: Int = 2) -> Observable<Response?> {
+        if showHUD {
+            indicator.asDriver()
+                .drive(SVProgressHUD.rx.isAnimating)
+                .disposed(by: disposeBag)
+        }
         
-        return  provider.rx.request(target)
+        return   provider.rx.request(target)
                 .asObservable()
-                .showLoadingHUD(showHUD)
+                .trackActivity(indicator,show: showHUD)
                 .filterCustomErrorCode()
                 .materialize()
                 .map({ (event) -> Response? in
@@ -68,4 +78,18 @@ extension ObservableType where E == Response {
             SVProgressHUD.dismiss(withDelay: 0.1)
         }
     }
+}
+
+extension Reactive where Base: SVProgressHUD {
+    
+    public static var isAnimating: Binder<Bool> {
+        return Binder(UIApplication.shared) {progressHUD, isVisible in
+            if isVisible {
+                SVProgressHUD.show()
+            } else {
+                SVProgressHUD.dismiss()
+            }
+        }
+    }
+    
 }
