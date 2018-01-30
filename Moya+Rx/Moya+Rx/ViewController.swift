@@ -11,6 +11,7 @@ import RxSwift
 import RxCocoa
 import RxOptional
 import SVProgressHUD
+import Result
 // 有问题！
 
 class ViewController: UIViewController {
@@ -28,8 +29,17 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       
-        
+//        let nsError = NSError(domain: "", code: 0)
+//        let function: () throws -> String = {
+//            if nsError.localizedDescription != "" {
+//                return "123"
+//            }else {
+//                throw nsError
+//            }
+//        }
+//        
+//        let result: Result<String, AnyError> = Result(attempt: function)
+
 //        retry2()
         textView.rx.text.orEmpty
             .map { $0.count > 0 }
